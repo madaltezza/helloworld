@@ -5,9 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function submitHandler(e) {
+            e.preventDefault(); 
+            const nameElement = document.getElementById("name"); 
+            const surnameElement = document.getElementById("surname");
+
+            const nameValue = nameElement.value;
+            const surnameValue = surnameElement.value;
+            const data = {
+                name: nameValue,
+                surname: surnameValue,
+            }
+            console.log(data);
+        }
+    </script>
 </head>
 <body>
     <h1>Hello world</h1>
     <p>Paragraph</p>
+    <form>
+        <label for="name">
+            Имя
+        </label>
+        <input type="text" name="name" id="name" class="form-input"/>
+        <label for="surname">
+            Фамилия
+        </label>
+        <input type="text" name="surname" id="surname" class="form-input"/>
+        <button type="submit" onclick="submitHandler(event)">
+            Отправить
+        </button>
+    </form>
 </body>
 </html>
